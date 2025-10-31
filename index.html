@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GX Gaming Store ⚡</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 3D Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === BACKGROUND ANIMATION === */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #020202 0%, #000 80%);
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: conic-gradient(from 90deg, #007bff22, #00ffe722, #007bff22);
+      animation: spin 8s linear infinite;
+      filter: blur(120px);
+      z-index: -1;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    h1, h2, h3 {
+      color: #00ffe7;
+      text-shadow: 0 0 15px #00ffe7, 0 0 30px #007bff;
+    }
+
+    /* === PRODUCT CARD === */
+    .product-card {
+      background: rgba(25, 25, 35, 0.95);
+      border: 2px solid #00ffe7;
+      border-radius: 18px;
+      box-shadow: 0 0 30px rgba(0,255,231,0.2);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 50px rgba(0,255,231,0.5), 0 0 20px rgba(0,123,255,0.3);
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 340px;
+      background: radial-gradient(circle, #111, #000);
+      border-radius: 10px;
+    }
+
+    .btn-glow {
+      background: linear-gradient(90deg, #00ffe7, #007bff);
+      color: #000;
+      font-weight: 700;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffe7, 0 0 40px #007bff;
+      transition: all 0.3s ease;
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px #00ffe7, 0 0 60px #007bff;
+    }
+
+    /* === CONTACT FORM === */
+    .contact-form {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #00ffe7;
+      box-shadow: 0 0 25px rgba(0,255,231,0.3);
+      border-radius: 18px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    input, textarea {
+      background: rgba(20, 20, 25, 0.9);
+      border: 1px solid #1e90ff;
+      color: #00ffe7;
+      font-size: 1.1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 15px #00ffe7;
+    }
+
+    footer {
+      border-top: 1px solid #1e90ff44;
+      text-shadow: 0 0 10px #007bff55;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="text-center py-12">
+    <h1 class="text-6xl font-extrabold mb-3">⚡ GX GAMING ZONE ⚡</h1>
+    <p class="text-gray-400 text-lg">Next-Gen Gaming Gear • Power • Performance • Style</p>
+  </header>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-10 text-center animate-pulse">🔥 FEATURED PRODUCTS 🔥</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Laptop -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Apex Shadow X15</h3>
+        <model-viewer src="Laptop" camera-controls auto-rotate shadow-intensity="1" exposure="1.3"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">RTX 4090 • Intel i9 • RGB Chassis • 240Hz OLED</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $2,499</button>
+        </div>
+      </div>
+
+      <!-- Keyboard -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">VoltStrike Pro Keyboard</h3>
+        <model-viewer src="hyperx_gaming_keyboard_low_poly.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">Optical Switches • Hot-swap PCB • Per-Key RGB</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $199</button>
+        </div>
+      </div>
+
+      <!-- Mouse -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Phantom Glide 2 Mouse</h3>
+        <model-viewer src="ice_claw_mouse.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">58g Ultra-light • 12000 DPI • RGB Aura Lighting</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $89</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PRODUCTS -->
+  <section class="max-w-7xl mx-auto px-6 mt-20">
+    <h2 class="text-4xl font-bold mb-10 text-center animate-pulse"></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Headphones -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Headphone</h3>
+        <model-viewer src="TIME HOTEL 2.6.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">7.1 Surround • RGB Earcups • Noise Cancel</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $149</button>
+        </div>
+      </div>
+
+      <!-- Computer Monitor  -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Computer Monitor  </h3>
+        <model-viewer src="coumputer_monitor.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">Crystal Clear Audio • Sleek & Compact Design</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $249</button>
+        </div>
+      </div>
+
+      <!-- Gaming Chair -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">HyperThrone Chair</h3>
+        <model-viewer src="gaming_chair.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">Ergonomic • RGB Trim • Lumbar Support</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $399</button>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section class="max-w-7xl mx-auto px-6 mt-20">
+    <h2 class="text-4xl font-bold mb-10 text-center animate-pulse"></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Gaming pc -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Gaming Pc</h3>
+        <model-viewer src="custom_gaming_pc_fbx_file.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">7.1 Surround • RGB Earcups • Noise Cancel</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $149</button>
+        </div>
+      </div>
+
+      <!-- Gaming desktop pc-->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center"> Gaming desktop pc</h3>
+        <model-viewer src="gaming_desktop_pc.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">Crystal Clear Audio • Sleek & Compact Design</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $249</button>
+        </div>
+      </div>
+
+      <!-- speakers -->
+      <div class="product-card p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center"> speaker</h3>
+        <model-viewer src="coyote_speaker_texture_redo.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+        <p class="text-gray-400 mt-4 text-center text-lg">Ergonomic • RGB Trim • Lumbar Support</p>
+        <div class="mt-6 text-center">
+          <button class="btn-glow">Add to Cart — $399</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="max-w-5xl mx-auto mt-24 px-6 mb-16" id="contact">
+    <h2 class="text-4xl font-bold text-center mb-10 animate-pulse">📩 Contact Us</h2>
+    <form onsubmit="sendMail(event)" class="contact-form space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input required id="name" placeholder="Your Name">
+        <input required id="email" type="email" placeholder="Your Email">
+      </div>
+      <textarea required id="message" rows="5" placeholder="Your Message"></textarea>
+      <div class="text-center">
+        <button class="btn-glow text-lg">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-gray-500 text-lg py-10">
+    © <span id="year"></span> GX Gaming Zone | Built for Gamers ⚔️
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const subject = encodeURIComponent(`Message from ${name}`);
+      const body = encodeURIComponent(`Email: ${email}\n\n${message}`);
+      window.location.href = `mailto:support@gxgamingzone.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
